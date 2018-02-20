@@ -10,7 +10,7 @@
 <h1>SDK Built Test Harness</h1>
 <script>
 	
-    var oneAsyncInit = function () {
+    var init = function () {
         var customerApi = ONE({
             version : '2.0',
             sk : 'ONE-AT7BTSA1HJ-7422',
@@ -31,7 +31,7 @@
         js = d.createElement(s);
         js.id = id;
         js.src = "https://onedevstaging.thunderhead.com/one/rt/js/one-sdk.js";
-        js.onload = oneAsyncInit;
+        js.onload = init;
         ojs.parentNode.insertBefore(js, ojs);
     }(document, 'one-sdk'));
 </script>
