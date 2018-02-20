@@ -3,28 +3,26 @@
 <head>
     <meta charset="utf-8">
     <title>The TH Javascript SDK</title>
+    <link rel="preload" href="https://onedevstaging.thunderhead.com/one/rt/js/one-tag.js?siteKey=ONE-AT7BTSA1HJ-7422" as="script">
+	<script>(function(d,s,b,k){var t=d.createElement(s),f=d.getElementsByTagName(s)[0];t.id='thxTag';t.src=b+'/one/rt/js/one-tag.js?siteKey='+k;f.parentNode.insertBefore(t,f);})(document,'script','https://onedevstaging.thunderhead.com','ONE-AT7BTSA1HJ-7422')</script> 
 </head>
 <body>
 <h1>SDK Built Test Harness</h1>
 <script>
+	
     var oneAsyncInit = function () {
         var customerApi = ONE({
             version : '2.0',
             sk : 'ONE-AT7BTSA1HJ-7422',
             touchpoint : 'https://monzacharias.github.io',
-            host: 'https://eu2.thunderhead.com'
+            host: 'https://onedevstaging.thunderhead.com'
         }).customerApi({
-            customerKey: 'foo'
         });
 
-        customerApi.sendInteraction("/wiki/Main_Page").then(function (data) {
+        customerApi.sendInteraction("/one-cookieSync").then(function (data) {
             console.log("API Call worked", data);
+    		console.log(customerApi.getTid());
         });
-
-        customerApi.sendInteraction("/wiki/Main_Page").then(function (data) {
-            console.log("API Call worked", data);
-        });
-
     };
 
     (function (d, id) {
@@ -32,7 +30,7 @@
         if (d.getElementById(id)) {return;}
         js = d.createElement(s);
         js.id = id;
-        js.src = "https://eu2.thunderhead.com/one/rt/js/one-sdk.js";
+        js.src = "https://onedevstaging.thunderhead.com/one/rt/js/one-sdk.js";
         js.onload = oneAsyncInit;
         ojs.parentNode.insertBefore(js, ojs);
     }(document, 'one-sdk'));
