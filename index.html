@@ -11,7 +11,8 @@
         var customerApi = ONE({
             version : '2.0',
             sk : 'ONE-AT7BTSA1HJ-7422',
-            touchpoint : 'https://monzacharias.github.io'
+            touchpoint : 'https://monzacharias.github.io',
+            host: 'https://eu2.thunderhead.com'
         }).customerApi({
             customerKey: 'foo'
         });
@@ -23,6 +24,7 @@
         customerApi.sendInteraction("/wiki/Main_Page").then(function (data) {
             console.log("API Call worked", data);
         });
+
     };
 
     (function (d, id) {
