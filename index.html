@@ -8,32 +8,6 @@
 </head>
 <body>
 <h1>SDK Built Test Harness</h1>
-<script>
-	
-    var init = function () {
-        var customerApi = ONE({
-            version : '2.0',
-            sk : 'ONE-AT7BTSA1HJ-7422',
-            touchpoint : 'https://monzacharias.github.io',
-            host: 'https://onedevstaging.thunderhead.com'
-        }).customerApi({
-        });
 
-        customerApi.sendInteraction("/one-cookieSync").then(function (data) {
-            console.log("API Call worked", data);
-    		console.log(customerApi.getTid());
-        });
-    };
-
-    (function (d, id) {
-        var js, s = 'script', ojs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "https://onedevstaging.thunderhead.com/one/rt/js/one-sdk.js";
-        js.onload = init;
-        ojs.parentNode.insertBefore(js, ojs);
-    }(document, 'one-sdk'));
-</script>
 </body>
 </html>
