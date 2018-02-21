@@ -29,7 +29,7 @@
 
         customerApi.sendInteraction('/one-cookieSync').then(function (data) {
             console.log('API Call worked 111', customerApi.getTid());
-         
+			console.log(getCookie('_one_MTkyMg'));
         });
     };    
 
@@ -42,6 +42,30 @@
         js.onload = init;
         ojs.parentNode.insertBefore(js, ojs);
     }(document, 'one-sdk'));
+
+    function getCookie( name ) {    
+
+	    var start = document.cookie.indexOf( name + "=" );
+
+	    var len = start + name.length + 1;
+
+	    if ( ( !start ) && ( name != document.cookie.substring( 0, name.length ) ) ) {
+
+	        return null;
+
+	    }
+
+	    if ( start == -1 ) return null;
+
+	    var end = document.cookie.indexOf( ';', len );
+
+	    if ( end == -1 ) end = document.cookie.length;
+
+	    return unescape( document.cookie.substring( len, end ) );
+
+	}
+
+
 </script>
 </body>
 </html>
