@@ -9,7 +9,7 @@
 </head>
 <body>
 <h1>SDK Built Test Harness iOS test</h1>
-<!-- <script>
+<script>
 	
 	var customerApi
 
@@ -18,32 +18,20 @@
             version : '2.0',
             sk : 'ONE-AT7BTSA1HJ-7422',
             touchpoint : 'https://monzacharias.github.io',
-            host: 'https://onedevstaging.thunderhead.com'
+            host: 'https://onedevstaging.thunderhead.com',
+            oauth1 : {
+            	apiKey : '5f04379b-f30d-40e8-af6d-4ca234568507',
+            	sharedSecret : '693e5b98-e0ab-4553-8407-f76dc7fe838c',
+            	loginId : 'qadmin@ocon-sandbox'
+            }
         }).customerApi({
         });
-    };
 
-    waitForMe().then(function(intentsArr){
-  		console.log('Finally, I can execute!!!');
-	},
-	function(err){
-  		console.log('This is error message.');
-	})
-
-	function waitForMe(){
-	    // Returns promise
-	    console.log('Inside waitForMe');
-	    return new Promise(function(resolve, reject){
-	        setTimeout(function(){
-                customerApi.sendInteraction('/one-cookieSync').then(function (data) {
-            		console.log('API Call worked 111', customerApi.getTid());
-            		resolve();
-        		});
-	        }, 1);
-	    });
-	}
-
-    
+        customerApi.sendInteraction('/one-cookieSync').then(function (data) {
+            console.log('API Call worked 111', customerApi.getTid());
+         
+        });
+    };    
 
     (function (d, id) {
         var js, s = 'script', ojs = d.getElementsByTagName(s)[0];
@@ -54,6 +42,6 @@
         js.onload = init;
         ojs.parentNode.insertBefore(js, ojs);
     }(document, 'one-sdk'));
-</script> -->
+</script>
 </body>
 </html>
