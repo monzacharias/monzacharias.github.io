@@ -9,7 +9,7 @@
 </head>
 <body>
 <h1>SDK Built Test Harness iOS test 2</h1>
-<!-- <script>
+<script>
 	
 	var customerApi
 
@@ -27,8 +27,9 @@
         }).customerApi({
         });
 
-        customerApi.sendInteraction('/one-cookieSync').then(function (data) {
-            console.log('API Call worked 111', customerApi.getTid());
+        customerApi.sendInteraction(window.location.pathname).then(function (data) {
+            console.log('API Call worked 111', data);
+            console.log(customerApi.getTid());
 			console.log(getCookie('_one_MTkyMg'));
         });
     };    
@@ -66,6 +67,6 @@
 	}
 
 
-</script> -->
+</script>
 </body>
 </html>
