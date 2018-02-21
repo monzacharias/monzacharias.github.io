@@ -9,25 +9,39 @@
 </head>
 <body>
 <h1>SDK Built Test Harness</h1>
-<script>
+<!-- <script>
 	
+	var customerApi
+
     var init = function () {
-        var customerApi = ONE({
+        customerApi = ONE({
             version : '2.0',
             sk : 'ONE-AT7BTSA1HJ-7422',
             touchpoint : 'https://monzacharias.github.io',
             host: 'https://onedevstaging.thunderhead.com'
         }).customerApi({
         });
-
-        customerApi.sendInteraction('/one-cookieSync').then(function (data) {
-            console.log('API Call worked', customerApi.getTid());
-        });
-
-        function getTid() {
-    		return customerApi.getTid();
-    	}
     };
+
+    waitForMe().then(function(intentsArr){
+  		console.log('Finally, I can execute!!!');
+	},
+	function(err){
+  		console.log('This is error message.');
+	})
+
+	function waitForMe(){
+	    // Returns promise
+	    console.log('Inside waitForMe');
+	    return new Promise(function(resolve, reject){
+	        setTimeout(function(){
+                customerApi.sendInteraction('/one-cookieSync').then(function (data) {
+            		console.log('API Call worked 111', customerApi.getTid());
+            		resolve();
+        		});
+	        }, 1);
+	    });
+	}
 
     
 
@@ -40,6 +54,6 @@
         js.onload = init;
         ojs.parentNode.insertBefore(js, ojs);
     }(document, 'one-sdk'));
-</script>
+</script> -->
 </body>
 </html>
