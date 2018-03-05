@@ -44,24 +44,24 @@
         ojs.parentNode.insertBefore(js, ojs);
     }(document, 'one-sdk'));
 
- //    function getCookie( name ) {    
-	//     var start = document.cookie.indexOf( name + "=" );
-	//     var len = start + name.length + 1;
-	//     if ( ( !start ) && ( name != document.cookie.substring( 0, name.length ) ) ) {
-	//         return null;
-	//     }
-	//     if ( start == -1 ) return null;
-	//     var end = document.cookie.indexOf( ';', len );
-	//     if ( end == -1 ) end = document.cookie.length;
-	//     return unescape( document.cookie.substring( len, end ) );
-	// }
+    function getCookie( name ) {    
+	    var start = document.cookie.indexOf( name + "=" );
+	    var len = start + name.length + 1;
+	    if ( ( !start ) && ( name != document.cookie.substring( 0, name.length ) ) ) {
+	        return null;
+	    }
+	    if ( start == -1 ) return null;
+	    var end = document.cookie.indexOf( ';', len );
+	    if ( end == -1 ) end = document.cookie.length;
+	    return unescape( document.cookie.substring( len, end ) );
+	}
 
-	// function readCookie(name) {
-	//     name += '=';
-	//     for (var ca = document.cookie.split(/;\s*/), i = ca.length - 1; i >= 0; i--)
-	//         if (!ca[i].indexOf(name))
-	//             return ca[i].replace(name, '');
-	// }
+	function readCookie(name) {
+	    name += '=';
+	    for (var ca = document.cookie.split(/;\s*/), i = ca.length - 1; i >= 0; i--)
+	        if (!ca[i].indexOf(name))
+	            return ca[i].replace(name, '');
+	}
 
 
 </script>
